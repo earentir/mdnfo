@@ -458,8 +458,8 @@ func drawProgressBar(width int, ratio float64, label string) string {
 	}
 	bar := b.String()
 
-	if len(label) > 0 && len(label) < width {
-		start := (width - len(label)) / 2
+	if labelLen := utf8.RuneCountInString(label); labelLen > 0 && labelLen < width {
+		start := (width - labelLen) / 2
 		runes := []rune(bar)
 		labelRunes := []rune(label)
 		for i := 0; i < len(labelRunes) && start+i < len(runes); i++ {
