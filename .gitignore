@@ -31,3 +31,9 @@ go.work.sum
 # .idea/
 # .vscode/
 mdnfo
+.trunk/tools
+.trunk/out
+.trunk/notifications
+.trunk/logs
+.trunk/actions
+.trunk/plugins/trunk
