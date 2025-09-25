@@ -975,7 +975,7 @@ type startFlags struct {
 func main() {
 	var flags startFlags
 	flags.style = "auto"
-	flags.baudrate = 115200
+	flags.baudrate = 0
 
 	cmd := &cobra.Command{
 		Use:   "mdnfo <file.md>",
@@ -1022,7 +1022,7 @@ func main() {
 	cmd.Flags().BoolVar(&flags.scanlines, "scanlines", false, "enable CRT-like scanlines")
 	cmd.Flags().BoolVar(&flags.bbs, "bbs", false, "enable BBS-style status line")
 	cmd.Flags().BoolVar(&flags.fixed8025, "80x25", false, "force classic 80x25 canvas")
-	cmd.Flags().IntVar(&flags.baudrate, "baudrate", 9600, "modem baud rate (bits/sec), e.g., 1200, 9600, 115200, 256000")
+	cmd.Flags().IntVar(&flags.baudrate, "baudrate", 0, "modem baud rate (bits/sec), e.g., 1200, 9600, 115200, 256000")
 	var monoStr string
 	cmd.Flags().StringVar(&monoStr, "mono", "off", "monochrome CRT mode: off, green, amber, white")
 
